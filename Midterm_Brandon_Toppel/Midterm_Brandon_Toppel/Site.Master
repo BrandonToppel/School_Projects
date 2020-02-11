@@ -1,0 +1,103 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Midterm_Brandon_Toppel.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="Content/NavStyles.css" runat="server" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/"><img id="logo" src="Content/Images/Logo2.jpg" /></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                         <li><asp:TextBox runat="server" ID="Searchbar" placeholder="Item # or Description" /></li>  
+                    <li><a runat="server" href="SignIn.aspx">Account</a></li>
+                   
+                    </ul>
+                    <div class ="Cart">
+                    <img src ="Content/Images/supermarket.png" />
+                        </div>
+                
+         
+                    
+                </div>
+                <div class="navbar-collapse collapse">
+                  
+                    <ul class="nav navbar-nav">
+                        <li><asp:DropDownList ID="Catergories" AutoPostBack="true" OnSelectedIndexChanged="Catergories_SelectedIndexChanged" runat="server">
+                            <asp:ListItem Value="1">Guitar</asp:ListItem>
+                            <asp:ListItem Value="2">Amplifiers and Effects</asp:ListItem>
+                            <asp:ListItem Value="3">Drums and Percussion</asp:ListItem>
+                            <asp:ListItem Value="4">Books and Sheet Music</asp:ListItem>
+                        </asp:DropDownList>
+                            </li>
+                       <li><asp:DropDownList ID="Deals" AutoPostBack="true" OnSelectedIndexChanged="Deals_SelectedIndexChanged" runat="server">
+                            <asp:ListItem Value="1">All Sales</asp:ListItem>
+                            <asp:ListItem Value="2">Clearance Items</asp:ListItem>
+                            <asp:ListItem Value="3">Restocked/Used Items</asp:ListItem>
+                            <asp:ListItem Value="4">Weekly Deal</asp:ListItem>
+                        </asp:DropDownList>
+                        </li>
+                    </ul>
+                     
+            </div>
+               
+        </div>
+            
+            </div>
+        
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>

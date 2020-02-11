@@ -1,0 +1,59 @@
+﻿/*Expands the searchbar also keeps from hitting top of the page */
+#Searchbar {
+    width: 100%;
+    margin-top: 1em;
+    
+}
+
+.Cart img {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+/*Positions the cart on the right side of the page*/
+.Cart {
+    width: 0px;
+    margin: 0px;
+    float: right;
+    top: -1000px;
+    min-width: 100px;
+    max-width: 500px;
+    min-height:2%;
+    align-content:center;
+  
+}
+
+#logo > img{
+   padding: 15px;
+}
+/*Makes the dropdown bars from touching the logo*/
+#Deals, #Catergories {
+    margin-top: 15%;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#Deals {
+    padding-left: 10px;
+    
+}
+a > img > .whatsNew {
+    margin-top: 2%;
+    margin-left: 100px;
+    
+}
+figcaption {
+    font-weight: bold;
+}
+.Events > p {
+    font-weight: bold;
+}
+.SignIn {
+    display: inline;
+    
+
+}
+.Register {
+    display:inline;
+    
+}
